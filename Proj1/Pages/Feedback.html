@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+
+<body>
+    <form id="feedbackForm">
+        <hr>
+        <p>Enter your details</p>
+        <input type="text" name="student_name" placeholder="Enter your name">
+        <br>
+        <input type="text" name="branch" placeholder="Enter your branch">
+        <p>Select your section</p>
+        <select name="Section" placeholder="Section">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+        <hr>
+        <p>What and all languages have you learnt by now?</p>
+        <input type="checkbox" value="HTML" name="languages">HTML
+        <br>
+        <input type="checkbox" value="CSS" name="languages">CSS
+        <br>
+        <input type="checkbox" value="JavaScript" name="languages">JavaScript
+        <br>
+        <input type="checkbox" value="Python" name="languages">Python
+        <br>
+        <input type="checkbox" value="Java" name="languages">Java
+        <br>
+        <input type="checkbox" value="C" name="languages">C
+        <br>
+        <input type="checkbox" value="C++" name="languages">C++
+        <br>
+        <input type="checkbox" value="C#" name="languages">C#
+        <br>
+        <input type="checkbox" value="PHP" name="languages">PHP
+        <br>
+        <input type="checkbox" value="Ruby" name="languages">Ruby
+        <br>
+        <input type="checkbox" value="Swift" name="languages">Swift
+        <br>
+        <input type="checkbox" value="Kotlin" name="languages">Kotlin
+        <br>
+        <input type="checkbox" value="TypeScript" name="languages">TypeScript
+        <br>
+        <input type="checkbox" value="SQL" name="languages">SQL
+        <br>
+        <input type="checkbox" value="Rust" name="languages">Rust
+        <br>
+        <input type="checkbox" value="Dart" name="languages">Dart
+        <br>
+        <input type="checkbox" value="MongoDB" name="languages">MongoDB
+        <br>
+        <input type="checkbox" value="MySQL" name="languages">MySQL
+        <br>
+        <input type="checkbox" value="PostgreSQL" name="languages">PostgreSQL
+        <br>
+        <input type="checkbox" value="SQLite" name="languages">SQLite
+        <br>
+        <input type="text" name="other_language" placeholder="Other">
+        <hr>
+        <p>Rate my Web Application</p>
+        <input type="radio" value="1" name="rating">1
+        <input type="radio" value="2" name="rating">2
+        <input type="radio" value="3" name="rating">3
+        <input type="radio" value="4" name="rating">4
+        <input type="radio" value="5" name="rating">5
+        <input type="radio" value="6" name="rating">6
+        <input type="radio" value="7" name="rating">7
+        <input type="radio" value="8" name="rating">8
+        <input type="radio" value="9" name="rating">9
+        <input type="radio" value="10" name="rating">10
+        <hr>
+        <p>Your feedback might help</p>
+        <textarea name="Feedback" placeholder="Enter your Feedback here" rows="15" cols="50"></textarea>
+        <hr>
+        <input type="submit">
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init("-xdgWMl5Ndxj0pu2H-cv0");
+
+        document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            emailjs.sendForm("service_9u0623q", "template_lclfggs", this)
+                .then(() => alert("Feedback sent successfully!"))
+                .catch((err) => alert("Failed to send: " + err));
+        });
+    </script>
+</body>
+
+</html>
